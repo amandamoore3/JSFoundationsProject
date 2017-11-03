@@ -1,0 +1,75 @@
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <meta charset="utf-8">
+          <title>Recipes</title>
+        </head>
+        <header>
+          <h1>Recipe matcher</h1>
+          <span>Select options to filter your suggested recipes list.</span>
+        </header>
+        <div id="optionsContainer">
+          <div id="courseContainer">
+            <label for="selectStyle">Course: </label>
+            <select id ="courseDD">
+              <option>Appetizers</option>
+              <option>Breakfast and Brunch</option>
+              <option>Lunch</option>
+              <option>Main Dishes</option>
+              <option>Breads</option>
+              <option>Salads</option>
+              <option>Soups</option>
+              <option>Side Dishes</option>
+              <option>Snacks</option>
+              <option>Desserts</option>
+              <option>Condiments and Sauces</option>
+              <option>Beverages</option>
+              <option>Cocktails</option>
+          </select>
+
+          </div>
+
+          <div id="exIngContainer">
+            <label for="excludedIngredients">Do not include these ingredient(s): </label>
+            <input type="text" id="excludedIngredients" placeholder="Excluded ingredients">
+          </div>
+
+
+          <div id="incIngContainer">
+            <label for="includedIngredients">Include these ingredient(s): </label>
+            <input type="text" id="includedIngredients" placeholder="Included ingredients">
+          </div>
+
+
+          <div id="search">
+            <label for="search">Search other keywords here: </label>
+            <input type="text" id="search" placeholder="Other keywords">
+          </div>
+
+        </div>
+        <div class="button" name="submit">
+          <input type="button" id="submit" value="Get my recipes">
+        </div>
+
+
+        <body>
+          <div id="results">
+            <div id="recipe1">
+              <div id="name"></div>
+              <ul id="ingredientList"></ul>
+
+            </div>
+            <!-- <div id="recipe2"></div>
+            <div id="recipe3"></div>
+            <div id="recipe"></div>
+            <div id="recipe"></div>
+            <div id="recipe"></div>
+            <div id="recipe"></div>
+            <div id="recipe"></div>
+            <div id="recipe"></div>
+            <div id="recipe"></div> -->
+          </div>
+
+        </body>
+        <script type="text/javascript" src= "script2.js"></script>
+      </html>

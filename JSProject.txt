@@ -1,0 +1,25 @@
+Requirements:
+  index.html
+  stylesheet.css
+  script.js
+
+use strict;
+no errors- no unnecessary console statements
+no 3rd party libraries
+
+API/AJAX request to JSON data
+have to use objects
+stuff has to happen on page
+
+well commented
+
+SCOPE
+Proposal- Rough draft due 11/1 at 10am
+Wireframe
+detailed supporting description
+  overall purpose or objective
+  data source
+  User actions and results- if using local storage what you're storing and why
+
+
+  
