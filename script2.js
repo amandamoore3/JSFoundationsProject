@@ -13,12 +13,54 @@ function search(){
 				if(ajaxRequest.readyState == 4){
 					if(ajaxRequest.status == 200){
 						let jsonObj = JSON.parse(ajaxRequest.responseText);
+
 						for (let i = 0; i < jsonObj.matches.length; i++) {
-							let name = "<h1>" + jsonObj.matches[i].recipeName + "</h1>";
-							document.getElementById("name").innerHTML = name;
+							let getName = document.getElementById("name");
+							let element= document.createElement("h1");
+							//element.setAttribute("id", "recipeTitle");
+							//let recipeTitle= document.getElementById("recipeTitle");
+							let recipeName = document.createTextNode(jsonObj.matches[i].recipeName);
+
+							element.appendChild(recipeName);
+							getName.appendChild(element);
+
+							let getIngredients = document.getElementById("ingredientList");
+							for (let h = 0; h < jsonObj.matches[i].ingredients.length; h ++) {
+                let ingredientLineItem= document.createElement("li");
+                let ingredientLineItemNode= document.createTextNode(jsonObj.matches[i].ingredients[h]);
+
+                ingredientLineItem.appendChild(ingredientLineItemNode);
+								getIngredients.appendChild(ingredientLineItem);
+							}
+							// let getIngredients = document.getElementById("ingredientList");
+							// let listItem = document.createElement("li");
+							// let recipeIngredient= document.createTextNode(jsonObj.matches[i].ingredients);
+							//
+							// listItem.appendChild(recipeIngredient);
+							// getIngredients.appendChild(listItem);
+
+							let getPic = document.getElementById("picture");
+							let pic= document.createElement("img");
+							let picNode = document.createTextNode(jsonObj.matches[i].imageUrlsBySize["90"]);
+							// let stringPicURL= JSON.stringify(picNode);
+							// let stringPicURL= picNode.toString();
+							// pic.setAttribute("src", picNode.toString());
+							// pic.setAttribute("src", JSON.stringify(picNode));
+							pic.setAttribute("src", picNode);
+							// pic.src = picNode;
+							//
+							pic.appendChild(picNode);
+							getPic.appendChild(pic);
+							// console.log(jsonObj.matches[i].imageUrlsBySize["90"].value);
+							console.log(picNode);
+							console.log(typeof picNode);
+							console.log(typeof pic.src);
+							console.log(pic.src);
+							//getName.appendChild(recipeName);
+
 						}
 
-						// document.getElementById("name").innerHTML = name;
+
           }
 					else {
 					console.log("Status error: " +ajaxRequest.status);
