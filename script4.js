@@ -140,7 +140,7 @@ function search(){
 		if (getExcluded !== "") {
 			excludedUrlString = excluded;
 		}
-
+		console.log(getKeywords);
 		if (getKeywords !== ""){
 			keywordsUrlString = keywords;
 		}
@@ -148,6 +148,7 @@ function search(){
 
 
 		let urlString = url + appID + appKey + keywordsUrlString + allowedCourse + includedUrlString + excludedUrlString;
+		console.log(urlString);
 		return ajaxRequest.open("GET", urlString, true);
 
 	}
