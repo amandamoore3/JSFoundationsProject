@@ -8,7 +8,7 @@ function search(){
 		 	let appID="?_app_id=2d03f5be";
 		 	let appKey="&_app_key=5be64fae7076a6211ec10c9cd6f6a61b";
 
-			//the following variables select the value of the serach parameters, and construct search parameters for the GET URL.
+			//the following variables select the value of the search parameters, and construct search parameters for the GET URL.
 		 	let allowedCourse="&allowedCourse[]=course^course-" + document.getElementById("courseDD").value;
 			let getKeywords= document.getElementById("search").value;
 			let keywords="&q=" + getKeywords;
@@ -32,6 +32,7 @@ function search(){
 
 							// create a parent container for each recipe
               let container = document.createElement("div");
+							container.setAttribute("class", "recipeContainer");
 
 							// create an h1 element
 							let heading= document.createElement("h1");
@@ -42,10 +43,15 @@ function search(){
 							let pic= document.createElement("img");
 							// create image text node
 							let picNode = (jsonObj.matches[i].imageUrlsBySize["90"]);
-							// set src attribute of imagenode as an absolute url
+
+							//creating a subheading for the ingredient list and setting it's class
+							let ingPara= document.createElement("p");
+							ingPara.setAttribute("class", "ingPara");
+							let ingParaNode= document.createTextNode("What you need:");
 
 							//  create an unordered list for ingredients
 							let ingredientUL= document.createElement("ul");
+							//declaring an empty variable to be used to compile list items
 							let ingredientLineItem = "";
 							let ingredientLineItemNode= "";
 							// // create a paragraph element for time to cook
@@ -54,20 +60,20 @@ function search(){
 							let timeInSeconds = jsonObj.matches[i].totalTimeInSeconds;
 							// convert to number
 							let timeInSecondsNum =parseInt(timeInSeconds);
-							// console.log(timeInSecondsNum);
-							// console.log(typeof timeInSecondsNum);
+
 
 							// manipulate number
 							let hours = (timeInSecondsNum / 3600);
+							//limiting number to two decimal places.
 							let hours2 = hours.toFixed(2);
 							// convert to string
-							let hoursString = hours2.toString();
+							let hoursString = hours2.toString() + " hour(s) until you can eat.";
 							// createTextNode with string from previous line
 							let timeNode= document.createTextNode(hoursString);
 
 							//create an input element
 							let button = document.createElement("input");
-
+							//declaring value for reach recipeid to be used for button
 							let recipeID= jsonObj.matches[i].id;
 							//declare onclickURL to construct URL for each recipe with the recipeID
 							let onClickUrl = "window.open(" + "\'http://www.yummly.co/recipe/"+ recipeID + "\')";
@@ -94,9 +100,13 @@ function search(){
 									// 	 	append element to unordered list
 									ingredientUL.appendChild(ingredientLineItem);
 								}
+								//apend subheading ingredient list text to paragraph element
+								ingPara.appendChild(ingParaNode);
+								//append ingredient subheading to recipe container
+								container.appendChild(ingPara);
 								// append element to recipe container
 								container.appendChild(ingredientUL);
-								// console.log(ingredientUL);
+
 
 
 
@@ -131,7 +141,7 @@ function search(){
 				}
 	}
 
-
+//this function ultimately builds the appropiate URL for the AJAX request using only the fields the user has selected. Starts with empty strings, and checks if there is a value from the user.  If there is an input value, the category precursor will be compiled with the input value and added to the URL.  If there is no input value, an empty string is added to the URL.
 	function ajaxFunc() {
 
 
