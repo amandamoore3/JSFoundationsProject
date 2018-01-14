@@ -1,59 +1,47 @@
 * {
   font-family: monospace;
-<<<<<<< HEAD
-
 }
 
 body {
-=======
   line-height: 150%;
 }
 
 html {
   background-color: #dcdcdc;
-
 }
+
 .container, .button {
->>>>>>> dev
   max-width: 75%;
   margin: 0 auto;
 }
 
-<<<<<<< HEAD
 h1 {
-
   text-align: center;
 }
 
 .span {
-  /*margin: 0 auto;*/
   text-align: center;
 }
 
-#optionsContainer {
-=======
 .title {
   text-align: center;
   font-size: 3em;
 }
 
 .directions {
-  /*margin: 0 auto;*/
   text-align: center;
   border-bottom: solid 1px #A9A9A9;
   font-size: 1.5em;
 }
 
 .options {
->>>>>>> dev
-  /*margin-left: 10em;*/
   text-align: center;
 }
 
-<<<<<<< HEAD
 label {
   line-height: 150%;
-=======
+}
+
 .container {
   margin-top: 2em;
   font-size: 1.5em;
@@ -64,7 +52,6 @@ input, select {
 }
 
 .submit {
-
   width: 100%;
 }
 
@@ -74,7 +61,6 @@ input, select {
 
 .recipeContainer {
   border: solid 2px #a9a9a9;
-
   max-width: 60%;
   font-size: 110%;
   background-color: white;
@@ -82,8 +68,12 @@ input, select {
   margin: 2em auto 0;
 }
 
-.ingPara{
+.ingPara {
   font-weight: bold;
   font-size: 120%;
->>>>>>> dev
+  text-align: left;
+}
+
+.ingUL {
+  text-align: left;
 }
