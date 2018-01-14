@@ -26,13 +26,16 @@ function search(){
 
 
 							let ingredients= "<li>" + jsonObj.matches[i].ingredients + "</li>";
-							// for (let i=0; i < jsonObj.matches.ingredients.length; i++) {
-							// 	let element = document.body.getElementById("ingredientList").createElement("li");
-							// 	let textNode= document.body.getElementById("ingredientList").createTextNode("jsonObj.matches.ingredients[i]");
-							// 	element.appendChild(textNode);
+							/* create ul/ol element that will hold ingredients */
+							for (let i=0; i < jsonObj.matches.ingredients.length; i++) {
+								let element = document.createElement("li");
+								let textNode= document.createTextNode(jsonObj.matches.ingredients[i]);
+								element.appendChild(textNode);
+								ingredientsHolder.appendChild(element);
+								/* append element to the holder list from line 29 */
 							// 	}
 							}
-
+							/* append holder list to the DOM */
 							// let pic = "<img src=\"" + jsonObj.matches[i].imageURLsBySize.90 + "\"" + "alt=\"There is no picture to display for this recipe.\">"
 
 
