@@ -41,6 +41,7 @@ function search() {
 
           // create an h1 element
           let heading = document.createElement("h1");
+          heading.setAttribute("class", "recipeTitle");
           // create recipename text node
           let headingNode = document.createTextNode(jsonObj.matches[i].recipeName);
 
