@@ -3,7 +3,7 @@
 function search() {
 
   let ajaxRequest = new XMLHttpRequest();
-  let url = 'http://api.yummly.com/v1/api/recipes';
+  let url = 'https://api.yummly.com/v1/api/recipes';
   //appID and appKey are necessary for each data request
   let appID = "?_app_id=2d03f5be";
   let appKey = "&_app_key=5be64fae7076a6211ec10c9cd6f6a61b";
